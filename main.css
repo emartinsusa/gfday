@@ -1,0 +1,162 @@
+/* RESET & TIPOGRAFIA */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: #111; color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+.hidden { display: none !important; }
+
+/* FONTES */
+.cursive {
+  font-family: 'Great Vibes', cursive;
+  /* espaçamento levemente maior para dar respiro entre as letras */
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.normal {
+  font-family: 'Poppins', sans-serif;
+}
+.highlight { color: red; }
+
+/* CONTAINER DE SLIDES */
+#slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLIDES */
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+.slide.active {
+  display: flex;
+}
+
+/* FADE-TEXT */
+.fade-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fade-text.visible {
+  opacity: 1;
+}
+
+/* SLIDE 1 – Saudação */
+.slide[data-slide="0"] .cursive {
+  /* mínimo 2rem, escala até 12vw, máximo 6rem */
+  font-size: clamp(2rem, 12vw, 6rem);
+  line-height: 1.1;
+}
+
+/* SUBTITLE (Slide 0) */
+.subtitle {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-align: left;
+}
+.slide[data-slide="0"].active .subtitle {
+  opacity: 1;
+}
+
+/* SLIDE 2 – Carta */
+#letter-img {
+  /* mínimo 200px, escala até 60vw, máximo 700px */
+  width: clamp(200px, 60vw, 700px);
+  height: auto;
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+  margin: 1.5rem 0;
+}
+#audio-control {
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+}
+#audio-btn svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* SLIDE 3 – Final */
+.slide[data-slide="2"] .cursive {
+  /* mínimo 1.5rem, escala até 10vw, máximo 5rem */
+  font-size: clamp(1.5rem, 10vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtexto final */
+.final-note {
+  font-family: 'Poppins', sans-serif;
+  /* mínimo 0.9rem, escala até 4.5vw, máximo 1.4rem */
+  font-size: clamp(0.9rem, 4.5vw, 1.4rem);
+  max-width: 90%;
+  margin: 0.8rem auto 0;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-align: center;
+}
+.slide[data-slide="2"] .final-note.visible {
+  opacity: 1;
+}
+
+/* CONTROLES */
+#controls {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+}
+#controls button {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: .5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#controls svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .slide[data-slide="0"] .cursive {
+    font-size: clamp(2.5rem, 14vw, 6rem);
+  }
+  .slide[data-slide="2"] .cursive {
+    font-size: clamp(1.8rem, 12vw, 5rem);
+  }
+  .fade-text {
+    font-size: 5vw;
+  }
+  #letter-img {
+    width: 80vw;
+    max-height: none;
+  }
+  #controls svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

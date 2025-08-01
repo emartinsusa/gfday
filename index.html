@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nosso Dia</title>
+  <!-- Fontes: Dancing Script (cursiva) + Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div id="slides-container">
+    <!-- SLIDE 1: Saudação -->
+    <section class="slide" data-slide="0">
+      <h1 class="cursive fade-text">Para a minha futura <a style="color: red;" >namorada!</a></h1>
+      <div class="subtitle">
+    By: Estevão Martins<br>
+    To: Sophie de Castro
+  </div>
+    </section>
+
+    <!-- SLIDE 2: Carta + Áudio -->
+    <section class="slide" data-slide="1">
+      <p class="normal fade-text">E então, escrevi algo especial só pra você...</p>
+      <img id="letter-img" src="cartaEstevaoGf.png" alt="Carta escaneada" />
+      <div id="audio-control">
+        <button id="audio-btn" aria-label="Reproduzir/pausar áudio">
+          <!-- Play Icon -->
+          <svg id="audio-icon-play" viewBox="0 0 24 24" class="hidden">
+            <path fill="#fff" d="M8 5v14l11-7z"/>
+          </svg>
+          <!-- Pause Icon -->
+          <svg id="audio-icon-pause" viewBox="0 0 24 24">
+            <path fill="#fff" d="M6 19h4V5H6m8 0v14h4V5z"/>
+          </svg>
+        </button>
+      </div>
+      <audio id="letter-audio" preload="auto">
+        <source src="audioCarta.mp3" type="audio/mpeg" />
+        Seu navegador não suporta áudio.
+      </audio>
+    </section>
+
+    <!-- SLIDE 3: Final -->
+    <section class="slide" data-slide="2">
+      <h2 class="cursive fade-text">Happy <a style="color: red;" >Girlfriend</a> day!</h2>
+    <p class="final-note normal fade-text">
+    Eu te amo mais do que consigo colocar em palavras. Obrigado por ser você.
+  </p>
+
+    </section>
+  </div>
+
+  <!-- CONTROLES DE NAVEGAÇÃO -->
+  <div id="controls">
+    <button id="prev-btn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24"><path fill="#fff" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button id="slide-pause-btn" aria-label="Pausar/Retomar apresentação">
+      <!-- Pause Icon -->
+      <svg id="ctrl-pause" viewBox="0 0 24 24"><path fill="#fff" d="M6 19h4V5H6m8 0v14h4V5z"/></svg>
+      <!-- Play Icon -->
+      <svg id="ctrl-play" viewBox="0 0 24 24" class="hidden"><path fill="#fff" d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button id="next-btn" aria-label="Próximo">
+      <svg viewBox="0 0 24 24"><path fill="#fff" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
